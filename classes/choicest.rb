@@ -1,10 +1,11 @@
 require_relative 'validator_by_integer'
 
 class Choicest
-  attr_reader :validator, :inputs
+  attr_reader :count, :validator, :inputs
 
-  def initialize(count = 3, validator = nil)
-    @validator = validator || ValidatorByInteger.new
+  def initialize(count = 3, validator = ValidatorByInteger.new)
+    @count = count
+    @validator = validator
     @inputs = []
 
     count.times do
